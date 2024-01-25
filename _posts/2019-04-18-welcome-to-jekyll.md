@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Jekyll!"
-date: 2019-04-18T15:34:30-04:00
+title: "Download Publishing Profile is disabled / Grayed in Azure App Services"
+date: 2024-01-24T22:00:00-04:00
 categories:
   - blog
 tags:
@@ -8,22 +8,44 @@ tags:
   - update
 ---
 
-You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Is deployment credentials button is disabled or grayed out in your Azure App Services like shown below?
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/1.png" alt="" class="full">
 
-Jekyll also offers powerful support for code snippets:
+There are couple of ways to download or reset Publishing credentails. 
 
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
+Azure Portal:
+If Download deployment credentials, reset deployment credentials are grayed out in your App Service then please follow below process to enable them. 
+Enable Basic Auth Publishing Credentials Option by navigating to App Service -> Configuration -> General Settings -> Basic Auth Publishing Credentials -> Turn ON. 
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/2.png" alt="" class="full">
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Note: (If it is already turned on, then please Turn off and Turn ON again. make sure to save for each action and refresh browser page to reflect Download deployment credentials, reset deployment credentials buttons get enabled). 
+Once button is enabled, you can download deployment credentials or reset as per your need. 
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/3.png" alt="" class="full">
+
+
+Azure CLI or Cloud Shell:
+
+Azure Cloud Shell can be launched from Azure portal.
+Click on the box  with >- on top right corner. Please reference below image (in case if you are using Cloud Shell first time). You need to have permissions to create a storage account, if this is the first time Cloud shell is launched. 
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/4.png" alt="" class="full">
+
+Use below Azure CLI commands to retrive Deployment credentails. 
+
+{% Azure CLI %}
+az webapp deployment list-publishing-credentials --name  delappnowasap --resource-group delapp
+{% Azure CLI %}
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/5.png" alt="" class="full">
+
+Check out [Azure CLI Command][reference-url] for additional information. 
+Complete [Deployment related CLI commands][fulldep-url] 
+
+
+
+[reference-url]: https://learn.microsoft.com/en-us/cli/azure/webapp/deployment?view=azure-cli-latest#az-webapp-deployment-list-publishing-credentials
+[fulldep-url]:   https://learn.microsoft.com/en-us/cli/azure/webapp/deployment?view=azure-cli-latest#az-webapp-deployment-list-publishing-credentials
+
