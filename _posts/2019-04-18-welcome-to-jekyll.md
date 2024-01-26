@@ -14,8 +14,8 @@ Is deployment credentials button is disabled or grayed out in your Azure App Ser
 
 There are couple of ways to download or reset Publishing credentails. 
 
-**Portal:**
-Azure Portal:
+**Azure Portal:**
+
 If Download deployment credentials, reset deployment credentials are grayed out in your App Service then please follow below process to enable them. 
 Enable Basic Auth Publishing Credentials Option by navigating to App Service -> Configuration -> General Settings -> Basic Auth Publishing Credentials -> Turn ON. 
 
@@ -26,10 +26,8 @@ Once button is enabled, you can download deployment credentials or reset as per 
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/3.png" alt="" class="full">
 
-**CLI:**
-CLI or Cloud Shell
-
- Cloud Shell can be launched from Azure portal.
+**CLI or Cloud Shell:**
+Cloud Shell can be launched from Azure portal.
 Click on the box  with >- on top right corner. Please reference below image (in case if you are using Cloud Shell first time). You need to have permissions to create a storage account, if this is the first time Cloud shell is launched. 
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/4.png" alt="" class="full">
